@@ -29,7 +29,7 @@ class SelectPack{
     boolean recharged(String action){
         boolean isDone =false;
         if(action.equalsIgnoreCase("ok")){
-            System.out.println("Recharge Successfully !");  
+            System.out.println("Recharge Successfull !");  
             isDone = true;
         }
         return isDone;
