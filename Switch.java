@@ -2,7 +2,7 @@ import java.util.*;
 
 class SelectPack{
 
-    void rechrges(){
+    void recharges(){
         
         int[] packs = {199,399,599};
         System.out.println("Available Recharge Packs : ");
@@ -19,9 +19,21 @@ class SelectPack{
         return choice;
     }
 
-    // void select(){
-    //     System.out.println('Write "OK" to confirm');
-    // }
+    String select(){
+        System.out.println("Write 'OK' to confirm");
+        Scanner sc = new Scanner(System.in);
+        String action = sc.nextLine();
+        return action;
+    }
+
+    boolean recharged(String action){
+        boolean isDone =false;
+        if(action.equalsIgnoreCase("ok")){
+            System.out.println("Recharge Successfully !");  
+            isDone = true;
+        }
+        return isDone;
+    }
     void plan599(){
         System.out.println("You have selected Rs.599 Pack");
         System.out.println("Plan Details - ");
@@ -72,8 +84,14 @@ public class Switch {
     public static void main(String[] args){
     SelectPack obj = new SelectPack(); 
     obj.display();
-    obj.rechrges(); 
+    while (true){
+    obj.recharges(); 
     int choice = obj.choices();
     obj.switchCases(choice);
-    }    
+    String action = obj.select();
+    boolean isDone = obj.recharged(action);
+    if (isDone)
+    {break;}
+
+    }   } 
 }
