@@ -74,9 +74,9 @@ class Logic{
 public class Counting {
     public static void main(String[] args) {
         Logic obj = new Logic();
-        // obj.rectangle();
-        // obj.hollowRectangle();
-        // obj.rightTriangle();
+        obj.rectangle();
+        obj.hollowRectangle();
+        obj.rightTriangle();
         obj.invertedRightTriangle();
     }
 }
